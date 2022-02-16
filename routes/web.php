@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Livewire\Shop\Cart\IndexComponent as CartIndexComponent;
+use App\Http\Livewire\Shop\IndexComponent;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +24,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/productos', [App\Http\Controllers\ProductController::class])->name('productos');
+Route::resources(['productos'=> ProductController::class,]); 
+
+Route::get('/cart', CartIndexComponent::class)->name('cart');
