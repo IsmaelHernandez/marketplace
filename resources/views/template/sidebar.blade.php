@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-shopping-cart"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Reservas<sup>1.0</sup></div>
+        <div class="sidebar-brand-text mx-3">StoreIsma<sup>1.0</sup></div>
     </a>
 
     <!-- Divider -->
