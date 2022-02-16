@@ -209,7 +209,7 @@
 
             </div>
             <!-- Footer -->
-            <footer class="sticky-footer" style="background: #F39C12;">
+            <footer class="fixed-bottom" style="background: #F39C12;">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Isoftware {{ date('Y') }}</span>

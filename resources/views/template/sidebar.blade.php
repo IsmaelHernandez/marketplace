@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #95A5A6;" >
+<ul class="fixed-bottom navbar-nav sidebar sidebar-dark accordion " id="accordionSidebar" style="background: #95A5A6;" >
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
