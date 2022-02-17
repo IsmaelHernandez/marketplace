@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Livewire\Shop\Cart\IndexComponent as CartIndexComponent;
 use App\Http\Livewire\Shop\IndexComponent;
 use Illuminate\Support\Facades\Auth;
@@ -29,3 +30,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resources(['productos'=> ProductController::class,]); 
 
 Route::get('/cart', CartIndexComponent::class)->name('cart');
+
+Route::resources(['checkout'=> CheckoutController::class,]);

@@ -18,7 +18,7 @@ class IndexComponent extends Component
 
     public function update_quantity($itemId, $quantity)
     {
-        
+
         /*Actualizar carrito */
         \Cart::session(auth()->id())->update($itemId,[
             'quantity' => array(
@@ -28,8 +28,11 @@ class IndexComponent extends Component
         ]);
     }
 
-    public function delete_item()
+    public function delete_item($itemId)
     {
+        //eliminar
+        \Cart::session(auth()->id())->remove($itemId);
         
+        //mensaje de eliminacion
     }
 }

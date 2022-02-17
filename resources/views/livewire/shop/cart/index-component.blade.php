@@ -24,6 +24,9 @@
         </table>
 
         <h3>Total: ${{\Cart::session(auth()->id())->getTotal()}}</h3>
+
+        <a href="{{route('checkout.index')}}" class="brn btn-secondary">Pagar</a>
+
         
     </div>
 </div>
