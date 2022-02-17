@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Shop\Cart;
 
 use Livewire\Component;
+use Darryldecode\Cart\Cart;
 
 class IndexComponent extends Component
 {
@@ -13,5 +14,22 @@ class IndexComponent extends Component
         return view('livewire.shop.cart.index-component', compact('cart_items'))
         ->extends('layouts.template')
         ->section('content');
+    }
+
+    public function update_quantity($itemId, $quantity)
+    {
+        
+        /*Actualizar carrito */
+        \Cart::session(auth()->id())->update($itemId,[
+            'quantity' => array(
+                'relative' => false,
+                'value' => $quantity
+            ),
+        ]);
+    }
+
+    public function delete_item()
+    {
+        
     }
 }

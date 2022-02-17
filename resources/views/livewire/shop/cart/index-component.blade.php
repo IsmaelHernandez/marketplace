@@ -10,18 +10,20 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($cart_items as $item)
+                @foreach ($cart_items->sortBy('id') as $item)
                 <tr>
                     <td>{{$item->name}}</td>
-                    <td>{{$item->quantity}}</td>
-                    <td>${{$item->price}}</td>
+                    <td><input type="number" class="form-control" id="v{{$item->id}}" wire:change="update_quantity({{$item->id}}, $('#v' + {{$item->id}}).val())" value="{{$item->quantity}}"></td>
+                    <td>${{\Cart::session(auth()->id())->get($item->id)->getPriceSum() }}</td>
                     <td>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <button type="button" class="btn btn-danger" wire:click="delete_item({{$item->id}})">Eliminar</button>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+
+        <h3>Total: ${{\Cart::session(auth()->id())->getTotal()}}</h3>
         
     </div>
 </div>
