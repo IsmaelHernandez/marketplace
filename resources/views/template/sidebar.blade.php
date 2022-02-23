@@ -57,6 +57,22 @@
             </div>
         </div>
     </li>
+
+    <li class="nav-item">
+
+        <a class="nav-link collapsed text-uppercase" href="students" data-toggle="collapse" data-target="#students"
+            aria-expanded="true" aria-controls="students">
+            <i class="fas fa-bars"></i>
+            <span>Students</span>
+        </a>
+
+        <div id="students" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Students</h6>
+                <a class="collapse-item" href="{{route('students.index')}}">Students</a>
+            </div>
+        </div>
+    </li>
     
 
    

@@ -6,6 +6,7 @@ use App\Http\Livewire\Shop\IndexComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::resources(['productos'=> ProductController::class,]);
 Route::get('/cart', CartIndexComponent::class)->name('cart');
 
 Route::resources(['checkout'=> CheckoutController::class,]);
+
+Route::resources(['students'=> StudentController::class,]);
