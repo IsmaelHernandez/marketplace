@@ -65,8 +65,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit($id)
     {
+        $student = Student::find($id);
         return view('pages.students.edit',compact('student'));
     }
 
@@ -77,13 +78,15 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'name'=> 'required',
             'last_name'=> 'required',
             'age'=> 'required'
         ]);
+        
+        $student = Student::find($id);
 
         $student->update($request->all());
 
@@ -97,8 +100,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
+        $student = Student::find($id);
+        
         $student->delete();
     
         return redirect()->route('students.index')
